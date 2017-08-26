@@ -78,10 +78,10 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one',function(req,res){
-    res.send(createTemplate(ArticleOne));
+    res.send(createTemplate(articles[ArticleOne]));
 });
 app.get('/article-two',function(req,res){
-    res.send(createTemplate(ArticleTwo));
+    res.send(createTemplate(articles[ArticleTwo]));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
