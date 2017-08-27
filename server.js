@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 var counter = 0;
 
 var names = [];
-app.get('/submit-name/:name', function (req, res) { //URL : /submit-name?name=xxxx
+app.get('/submit-name', function (req, res) { //URL : /submit-name?name=xxxx
     //Get name
     var name = req.query.name ;
     
