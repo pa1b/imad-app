@@ -82,6 +82,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
+});
+
 
 /*app.get('/article-one',function(req,res){
     res.send(createTemplate(articles['article-one']));
@@ -90,10 +95,7 @@ app.get('/article-two',function(req,res){
     res.send(createTemplate(articles['article-two']));
 }); */
 
-app.get('/counter', function (req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
-});
+
 
 app.get('/:articleName',function(req,res){
     var articleName = req.params.articleName;
