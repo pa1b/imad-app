@@ -5,6 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var counter = 0;
+
+
 
 
 var articles = {
@@ -87,15 +90,16 @@ app.get('/article-two',function(req,res){
     res.send(createTemplate(articles['article-two']));
 }); */
 
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
-});
+
 
 app.get('/:articleName',function(req,res){
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
+});
+
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
 });
 
 
