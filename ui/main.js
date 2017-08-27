@@ -44,14 +44,14 @@ submit.onclick = function () {
                   }
     var ul = document.getElementById ('namelist');
     ul.innerHTML = list;
-};
+}
           }
       }
   };
   //Make Request
   var nameInput = document.getElementById('name');
-  var  name = nameInput.value;
-  request.open('GET','http://pavanbellamkonda98.imad.hasura-app.io/submit-name?name' + name,true);
+  var name = nameInput.value;
+  request.open('GET','http://pavanbellamkonda98.imad.hasura-app.io/submit-name?name=' + name,true);
   request.send(null);
 
   //Capture a list of names and render it
